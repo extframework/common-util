@@ -15,7 +15,9 @@ public fun String.parseHex(): ByteArray = HexFormat.of().parseHex(this)
 public fun URI.toResource(checkSum: ByteArray, checkType: String = "SHA1"): SafeResource =
     ExternalResource(this, checkSum, checkType)
 
-public fun Path.toResource(): SafeResource = LocalResource(this)
+public fun Path.toResource(): SafeResource = LocalResource(this.toUri())
+
+public fun URI.toResource() : SafeResource = LocalResource(this)
 
 public suspend infix fun SafeResource.copyTo(to: Path): Path =
     coroutineScope { // Dont want to use IO scope as we need to make sure the resource has been fully copied before returning
