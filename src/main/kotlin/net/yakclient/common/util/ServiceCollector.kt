@@ -4,7 +4,7 @@ public interface ServiceCollector<T : Any> {
     public fun add(impl: T)
 }
 
-public open class ListServiceCollector<T: Any>(
+public open class ServiceCollectorList<T: Any>(
     protected val services: MutableList<T> = ArrayList()
 ) : ServiceCollector<T>, List<T> by services {
     override fun add(impl: T) {
@@ -12,7 +12,7 @@ public open class ListServiceCollector<T: Any>(
     }
 }
 
-public open class MappedServiceCollector<K, V: Any>(
+public open class ServiceCollectorMap<K, V: Any>(
     private val keyProvider: (V) -> K,
     protected val services: MutableMap<K, V> = HashMap()
 ) : ServiceCollector<V>, Map<K, V> by services {
