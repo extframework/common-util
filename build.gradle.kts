@@ -5,6 +5,8 @@ plugins {
     id("maven-publish")
     id("org.jetbrains.dokka") version "1.6.21"
     id("org.javamodularity.moduleplugin") version "1.8.10"
+//    id ("com.google.cloud.artifactregistry.gradle-plugin") version "2.2.0"
+
 }
 
 group = "net.yakclient"
@@ -102,21 +104,12 @@ publishing {
     }
 
     repositories {
-        if (!project.hasProperty("maven-user") || !project.hasProperty("maven-pass")) return@repositories
-
         maven {
-            val repo = if (project.findProperty("isSnapshot") == "true") "snapshots" else "releases"
-
-            isAllowInsecureProtocol = true
-
-            url = uri("http://repo.yakclient.net/$repo")
-
+            val repo = if ((version as String).endsWith("-SNAPSHOT")) "maven-snapshots" else "maven-releases"
+            setUrl("https://us-west1-maven.pkg.dev/yakclient-319119/$repo")
             credentials {
-                username = project.findProperty("maven-user") as String
-                password = project.findProperty("maven-pass") as String
-            }
-            authentication {
-                create<BasicAuthentication>("basic")
+                username = project.properties["maven-user"] as String
+                password = project.properties["maven-secret"] as String
             }
         }
     }
