@@ -105,8 +105,9 @@ publishing {
 
     repositories {
         maven {
-            val repo = if ((version as String).endsWith("-SNAPSHOT")) "maven-snapshots" else "maven-releases"
-            setUrl("https://us-west1-maven.pkg.dev/yakclient-319119/$repo")
+            val db = if ((version as String).endsWith("-SNAPSHOT")) "snapshots" else "releases"
+            setUrl("http://maven.yakclient.net/$db")
+            isAllowInsecureProtocol = true
             credentials {
                 username = project.properties["maven-user"] as String
                 password = project.properties["maven-secret"] as String
