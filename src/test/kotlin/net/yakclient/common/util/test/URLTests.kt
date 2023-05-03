@@ -10,7 +10,6 @@ class URLTests {
     fun `Test custom url connection handlers`() {
         val content = "Hello"
         val url = URL("https://google.com").withContent { content.byteInputStream() }
-
         println(String(url.openStream().readInputStream()))
     }
 }
