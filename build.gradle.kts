@@ -11,6 +11,10 @@ version = "1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("http://maven.yakclient.net/snapshots")
+        isAllowInsecureProtocol = true
+    }
 }
 
 tasks.wrapper {
