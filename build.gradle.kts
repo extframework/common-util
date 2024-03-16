@@ -1,16 +1,13 @@
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.9.21"
 
     id("signing")
     id("maven-publish")
-    id("org.jetbrains.dokka") version "1.6.21"
-    id("org.javamodularity.moduleplugin") version "1.8.10"
-//    id ("com.google.cloud.artifactregistry.gradle-plugin") version "2.2.0"
-
+    id("org.jetbrains.dokka") version  "1.9.10"
 }
 
 group = "net.yakclient"
-version = "1.0-SNAPSHOT"
+version = "1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -25,6 +22,7 @@ kotlin {
 }
 
 dependencies {
+    api("com.durganmcbroom:resource-api:1.0-SNAPSHOT")
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     testImplementation(kotlin("test"))
@@ -109,8 +107,8 @@ publishing {
             setUrl("http://maven.yakclient.net/$db")
             isAllowInsecureProtocol = true
             credentials {
-                username = project.properties["maven-user"] as String
-                password = project.properties["maven-secret"] as String
+                username = project.properties["maven-user"] as? String
+                password = project.properties["maven-secret"] as? String
             }
         }
     }

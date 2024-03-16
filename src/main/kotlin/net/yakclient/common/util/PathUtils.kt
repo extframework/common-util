@@ -1,7 +1,5 @@
 package net.yakclient.common.util
 
-import net.yakclient.common.util.resource.LocalResource
-import net.yakclient.common.util.resource.SafeResource
 import java.net.URL
 import java.nio.file.Files
 import java.nio.file.Path
