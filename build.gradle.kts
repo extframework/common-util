@@ -7,10 +7,11 @@ plugins {
 }
 
 group = "net.yakclient"
-version = "1.1-SNAPSHOT"
+version = "1.1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven {
         url = uri("http://maven.yakclient.net/snapshots")
         isAllowInsecureProtocol = true
@@ -26,7 +27,7 @@ kotlin {
 }
 
 dependencies {
-    api("com.durganmcbroom:resource-api:1.0-SNAPSHOT")
+    api("com.durganmcbroom:resource-api:1.1-SNAPSHOT")
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     testImplementation(kotlin("test"))
