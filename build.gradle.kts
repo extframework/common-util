@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "net.yakclient"
-version = "1.1.2-SNAPSHOT"
+version = "1.1.3-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ kotlin {
 }
 
 dependencies {
-    api("com.durganmcbroom:resource-api:1.1.1-SNAPSHOT")
+    api("com.durganmcbroom:resource-api:1.1.2-SNAPSHOT")
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     testImplementation(kotlin("test"))
