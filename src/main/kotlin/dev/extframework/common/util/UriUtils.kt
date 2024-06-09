@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 import java.io.InputStream
 import java.net.URI

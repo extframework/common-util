@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty

@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 import com.durganmcbroom.resources.*
 import java.io.FileOutputStream

@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 public class LazyMap<K, out V>(
    private val delegate: MutableMap<K, V> = HashMap(),

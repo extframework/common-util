@@ -1,6 +1,6 @@
-package net.yakclient.common.util.test
+package dev.extframework.common.util.test
 
-import net.yakclient.common.util.runCatching
+import dev.extframework.common.util.runCatching
 import java.lang.Exception
 import kotlin.test.Test
 

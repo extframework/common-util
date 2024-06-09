@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 public fun <T> T.equalsAny(vararg all: T): Boolean = all.any { this == it }
 

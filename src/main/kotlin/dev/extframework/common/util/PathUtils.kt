@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 import java.net.URL
 import java.nio.file.Files

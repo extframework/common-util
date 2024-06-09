@@ -1,4 +1,4 @@
-package net.yakclient.common.util
+package dev.extframework.common.util
 
 public interface ServiceCollector<T : Any> {
     public fun add(impl: T)

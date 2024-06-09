@@ -1,7 +1,7 @@
-package net.yakclient.common.util.test
+package dev.extframework.common.util.test
 
-import net.yakclient.common.util.readInputStream
-import net.yakclient.common.util.withContent
+import dev.extframework.common.util.readInputStream
+import dev.extframework.common.util.withContent
 import java.net.URL
 import kotlin.test.Test
 
