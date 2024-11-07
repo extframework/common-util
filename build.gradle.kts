@@ -42,6 +42,8 @@ common {
             withSources()
             withDokka()
 
+            this.version = project.version as String
+
             artifactId = "common-util"
 
             commonPom {
