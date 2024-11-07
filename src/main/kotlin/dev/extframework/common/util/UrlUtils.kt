@@ -4,11 +4,11 @@ import java.io.IOException
 import java.io.InputStream
 import java.net.*
 import java.nio.file.Files
-import java.nio.file.Path
+import kotlin.io.path.Path
 
 public fun URL.isReachable(): Boolean = try {
     when (protocol) {
-        "file" -> Files.exists(Path.of(file))
+        "file" -> Files.exists(Path(file))
         "http", "https" -> (openConnection() as HttpURLConnection).responseCode == 200
         else -> {
             this.openConnection() is DeferredURLConnection

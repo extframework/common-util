@@ -4,11 +4,11 @@ import dev.extframework.gradle.common.extFramework
 plugins {
     kotlin("jvm") version "1.9.21"
 
-    id("dev.extframework.common") version "1.0.5"
+    id("dev.extframework.common") version "1.0.28"
 }
 
 group = "dev.extframework"
-version = "1.1.3-SNAPSHOT"
+version = "1.2-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -60,6 +60,12 @@ common {
         }
         this.repositories {
             extFramework(credentials = propertyCredentialProvider)
+        }
+    }
+
+    java {
+        toolchain {
+            version = JavaVersion.VERSION_1_8
         }
     }
 }

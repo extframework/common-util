@@ -5,10 +5,9 @@ import java.io.FileOutputStream
 import java.net.URI
 import java.nio.channels.Channels
 import java.nio.file.Path
-import java.util.*
 import kotlin.io.path.toPath
 
-public fun String.parseHex(): ByteArray = HexFormat.of().parseHex(this)
+public fun String.parseHex(): ByteArray = Hex.parseHex(this)
 
 public fun URI.toResource(checkSum: ByteArray, checkType: ResourceAlgorithm = ResourceAlgorithm.SHA1): Resource =
     VerifiedResource(toURL().toResource(), checkType, checkSum)
