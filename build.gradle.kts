@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "dev.extframework"
-version = "1.2-SNAPSHOT"
+version = "1.2.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -25,7 +25,7 @@ kotlin {
 }
 
 dependencies {
-    resourceApi(configurationName = "api")
+    resourceApi(configurationName = "api", version = "1.2-SNAPSHOT")
 
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
