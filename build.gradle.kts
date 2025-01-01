@@ -4,7 +4,7 @@ import dev.extframework.gradle.common.extFramework
 plugins {
     kotlin("jvm") version "1.9.21"
 
-    id("dev.extframework.common") version "1.0.28"
+    id("dev.extframework.common") version "1.0.43"
 }
 
 group = "dev.extframework"
@@ -12,7 +12,6 @@ version = "1.2.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    mavenLocal()
     extFramework()
 }
 
@@ -25,7 +24,7 @@ kotlin {
 }
 
 dependencies {
-    resourceApi(configurationName = "api", version = "1.2-SNAPSHOT")
+    resourceApi(configurationName = "api")
 
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))

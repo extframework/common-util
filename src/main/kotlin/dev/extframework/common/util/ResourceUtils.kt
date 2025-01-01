@@ -26,21 +26,11 @@ public suspend infix fun Resource.copyTo(
     to: Path
 ): Path = withContext(Dispatchers.IO) {
     to.make()
-    val out = FileOutputStream(to.toFile())
-    open().collect { value ->
-        out.write(value)
+    FileOutputStream(to.toFile()).use { out ->
+        open().collect { value ->
+            out.write(value)
+        }
     }
 
     to
 }
-
-
-//Channels.newChannel().use { cin ->
-//        to.make()
-//        FileOutputStream(to.toFile()).use { fout ->
-//            fout.channel.transferFrom(cin, 0, Long.MAX_VALUE)
-//        }
-//        to
-//    }
-//}
-
